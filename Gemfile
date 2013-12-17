@@ -1,0 +1,2 @@
+gem 'fuubar'
+gem 'rspec'

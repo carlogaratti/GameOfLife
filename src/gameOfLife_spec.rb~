@@ -1,0 +1,34 @@
+require "./start.rb"
+
+describe Cell do
+ context " a cell is live"
+ it ".isLive? return true" do
+    cell = Cell.new
+    cell.live()
+    cell.isLive?.should eq (true)
+ end
+
+ context " a cell is died"
+ it ".isLive? return false" do
+    cell = Cell.new
+    cell.die()
+    cell.isLive?.should eq (false) 
+ end
+
+
+ context " a cell is born"
+ it ".isLive? return true" do
+    cell = Cell.new
+    cell.isLive?.should eq (true) 
+ end
+
+ context "a cell with  8 live  neightbors live"
+  it "status my neighboars" do
+    cell = Cell.new
+    vicini =
+[Cell.new, Cell.new, Cell.new, Cell.new, Cell.new, Cell.new, Cell.new,
+     Cell.new]  
+    basket = Basket.new(cell, vicini)
+    basket.status(cell).should eq (true)
+  end
+end 
